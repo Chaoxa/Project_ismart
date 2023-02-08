@@ -4,6 +4,7 @@
         align-items: center !important;
     }
 
+
     .img-product {
         width: 60px;
         float: left;
