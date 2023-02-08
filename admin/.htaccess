@@ -1,0 +1,25 @@
+RewriteEngine On
+
+RewriteRule ^home.html$ index.php?mod=home&controller=index&action=index
+
+RewriteRule ^product/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=product&controller=index&action=index&cat_id=$2
+RewriteRule ^product-detail/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=product&controller=index&action=detail&id=$2
+
+RewriteRule ^pages/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=page&controller=index&action=detail&id=$2
+
+RewriteRule ^member/([a-zA-Z0-9_-]+).html$ index.php?mod=member&controller=index&action=index
+RewriteRule ^member/([a-zA-Z0-9_-]+).html$ index.php?mod=member&controller=index&action=index
+RewriteRule ^add_member/([a-zA-Z0-9_-]+).html$ index.php?mod=member&controller=index&action=add_member
+
+
+RewriteRule ^show-cart/([a-zA-Z0-9_-]+).html$ index.php?mod=cart&controller=index&action=show
+RewriteRule ^show-cart/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=cart&controller=index&action=show&id=$2
+
+RewriteRule ^login/([a-zA-Z0-9_-]+).html$ index.php?mod=home&controller=index&action=login
+RewriteRule ^reg/([a-zA-Z0-9_-]+).html$ index.php?mod=users&controller=index&action=reg
+
+
+RewriteRule ^checkout/([a-zA-Z0-9_-]+).html$ index.php?mod=cart&controller=index&action=checkout
+
+RewriteRule ^success_order/([a-zA-Z0-9_-]+).html$ index.php?mod=cart&controller=index&action=success_order
+

@@ -1,0 +1,18 @@
+RewriteEngine On
+
+RewriteRule ^Trang-chu.html$ index.php?mod=home
+RewriteRule ^Danh-muc-bai-viet.html$ index.php?mod=blog
+RewriteRule ^Danh-sach-san-pham.html$ index.php?mod=product
+RewriteRule ^Gio-hang.html$ index.php?mod=cart&action=index
+RewriteRule ^Thanh-toan.html$ index.php?mod=checkout
+RewriteRule ^Thong-tin-don-hang.html$ index.php?mod=checkout&action=orderInfo
+
+RewriteRule ^Trang/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=page&page_id=$2
+RewriteRule ^Bai-viet/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=posts&action=detailPost&post_id=$2
+RewriteRule ^Danh-muc-([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=product&cat_id=$2
+RewriteRule ^San-pham-([a-zA-Z0-9_\#/!@$%^&*(),.+-]+)-([0-9]+).html$ index.php?mod=product&action=detail_product&product_id=$2
+RewriteRule ^Tim-kiem-san-pham-([a-zA-Z0-9_\#/!@$%^&*(),.+-]+)-([0-9]+)$ index.php?mod=products&controller=index&action=index&keyword=$1
+RewriteRule ^Gio-hang-([a-zA-Z0-9_\#/!@$%^&*(),.+-]+)-([0-9]+).html$ index.php?mod=cart&action=index&product_id=$2
+RewriteRule ^Xoa-san-pham-([0-9]+).html$ index.php?mod=cart&action=delete&product_id=$1
+RewriteRule ^Thanh-toan-([a-zA-Z0-9_\#/!@$%^&*(),.+-]+)-([0-9]+).html$ index.php?mod=checkout
+
