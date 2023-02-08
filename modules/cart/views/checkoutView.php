@@ -1,9 +1,9 @@
 <?php get_header() ?>
+<!-- css cho sản phẩm -->
 <style>
     span.limit_text {
         align-items: center !important;
     }
-
 
     .img-product {
         width: 60px;
