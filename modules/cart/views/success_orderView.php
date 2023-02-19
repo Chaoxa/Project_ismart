@@ -68,7 +68,7 @@ $cart_json = json_decode($bill['product'], true);
             <div class="icon"><img src="https://sablanca.vn/Images/icon/tick-iconblue.png" alt="Lỗi"></div>
             <h3 class="text-center my-2">Đặt hàng thành công</h3>
         </div>
-        <div id="wp-info" class="p-3">
+        <div id="wp-info" class="p-3 mb-5">
             <div id="info-cart">
                 <p>Xin chào <b><?php echo $bill['fullname'] ?></b></p>
                 <p>Chúc mừng bạn đã đặt hàng thành công sản phẩm của <b>TQ STORE.VN</b></p>
