@@ -4,7 +4,10 @@
 <head>
     <meta property="og:image" content="http://tranquy.unitopcv.com/admin/public/uploads/Screenshot_20221026_122140.png" />
     <meta property="og:title" content="TQ STORE" />
-    <title>ISMART STORE</title>
+    <meta property="og:url" content="https://tranquy.unitopcv.com/" />
+    <meta property="og:type" content="product" />
+    <meta property="og:description" content="Trần Quý Store luôn cung cấp sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu đãi cực lớn cho khách hàng có thẻ thành viên." />
+    <title>TQ STORE</title>
     <meta charset="UTF-8">
     <link rel="icon" href="https://noithattinnghia.com/wp-content/uploads/2019/03/cropped-icon-home-cam.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

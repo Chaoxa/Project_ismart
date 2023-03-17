@@ -13,7 +13,6 @@
                     <form method="POST">
                         <label for="display-name">Tên hiển thị</label>
                         <input type="text" name="fullname" id="display-name" value="<?php echo set_value('fullname') ?>">
-                        <?php echo form_error('fullname') ?>
                         <label for="control">Chức vụ</label>
                         <select name="control" id="control">
                             <?php global $control; ?>
