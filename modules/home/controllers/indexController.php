@@ -34,3 +34,13 @@ function buy_nowAction()
     // show_array($product);
     load_view('buy_now', $data);
 }
+
+function suggestAction()
+{
+    $keyword = $_POST['keyword'];
+    $list_suggest = get_list_products_suggest($keyword);
+    $data = array(
+        'list_suggest' => $list_suggest,
+    );
+    echo json_encode($data);
+}

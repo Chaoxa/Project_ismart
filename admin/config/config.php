@@ -13,6 +13,6 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 
 $config['base_url'] = "http://localhost/Php%20Master/PROJECT/Project_ismart/ismart.com/admin/";
 
-$config['default_module'] = 'page';
+$config['default_module'] = 'sale';
 $config['default_controller'] = 'index';
-$config['default_action'] = 'list_page';
+$config['default_action'] = 'list_order';

@@ -6,6 +6,7 @@
                     <style>
                         #logo h1 {
                             font-size: 30px;
+
                         }
                     </style>
                     <a href="?page=home" title="" id="logo" class="fl-left">
@@ -55,7 +56,7 @@
                 <h3 class="title">Bảng tin</h3>
                 <p class="desc dark">Đăng ký với chung tôi để nhận được thông tin ưu đãi sớm nhất</p>
                 <div id="form-reg">
-                    <form method="POST" action="">
+                    <form method="" action="">
                         <input type="email" name="email" id="email" placeholder="Nhập email tại đây">
                         <button type="submit" id="sm-reg">Đăng ký</button>
                     </form>
@@ -124,12 +125,10 @@
         $(".add-cart").click(function() {
             // alert('oke');
             var id = $(this).attr("data-id");
-
             var data = {
                 id: id,
             };
             // console.log(data);
-
             $.ajax({
                 url: "?mod=cart&action=add_cart",
                 method: "POST",
@@ -227,6 +226,7 @@
         return localStorage.setItem("darkMode", darkMode);
     }
 </script>
+
 </body>
 
 </html>

@@ -106,7 +106,7 @@
                 id: id,
                 qty: qty,
             };
-            console.log(data);
+            // console.log(data);
             $.ajax({
                 url: "?mod=cart&action=update_ajax",
                 method: "POST",
