@@ -96,7 +96,7 @@
                         <div id="action-wp" class="fl-right">
                             <div id="advisory-wp" class="fl-left d-flex mx-2">
                                 <div> <button class="dark-mode toggle-icon" onclick="toggleDarkMode()"></button></div>
-                                <img class="icon-phone" src="https://media1.giphy.com/media/mbW2nvTE0TUc5IgRMm/giphy.gif?cid=6c09b952zt437d67rjkizo3c18jt9vkq7zt9blk1l5bx6wxs&rid=giphy.gif&ct=s" alt="">
+                                <img class="icon-phone" src="https://media1.giphy.com/media/mbW2nvTE0TUc5IgRMm/giphy.gif?cid=6c09b952zt437d67rjkizo3c18jt9vkq7zt9blk1l5bx6wxs&rid=giphy.gif&ct=s" alt="" onclick="location.href='tel:0375284572'">
                                 <div>
                                     <span class="title">Tư vấn (Quý)</span>
                                     <span class="phone">0375.284.572</span>
