@@ -114,6 +114,17 @@
                                 font-size: 30px;
                                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                             }
+
+                            #search-suggestions {
+                                position: absolute;
+                                background: white;
+                                border-radius: 5px;
+                                z-index: 6;
+                            }
+
+                            #search-suggestions li {
+                                list-style: none;
+                            }
                         </style>
                         <a href="?page=home" title="" id="logo" class="fl-left">
                             <h1><b class="text-danger">TQ</b> <b class="text-primary">Store</b></h1>
@@ -136,12 +147,20 @@
                                     data: {
                                         keyword: keyword
                                     },
+                                    dataType: "json",
                                     success: function(response) {
-                                        console.log(response);
-                                        // Hiển thị danh sách sản phẩm phù hợp trong ô tìm kiếm gợi ý
-                                        const suggestions = response.suggestions;
-                                        const html = suggestions.map(suggestion => `<li>${suggestion}</li>`).join('');
-                                        $('#search-suggestions').html(html);
+                                        // console.log(response);
+                                        const suggestions = response.list_suggest;
+                                        // console.log(suggestions);
+                                        if (response.list_suggest == '') {
+                                            const html = ''
+                                            $('#search-suggestions').html(html);
+
+                                        } else {
+                                            const html = suggestions.map(suggestion => `<li><a href = "${suggestion.url}">${suggestion.product_name}</a></li>`).join('');
+                                            $('#search-suggestions').html(html);
+
+                                        }
                                     },
                                     error: function(jqXHR, textStatus, errorThrown) {
                                         console.error(errorThrown);

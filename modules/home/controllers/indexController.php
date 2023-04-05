@@ -38,7 +38,11 @@ function buy_nowAction()
 function suggestAction()
 {
     $keyword = $_POST['keyword'];
-    $list_suggest = get_list_products_suggest($keyword);
+    if (!empty($keyword)) {
+        $list_suggest = get_list_products_suggest($keyword);
+    } else {
+        $list_suggest = '';
+    }
     $data = array(
         'list_suggest' => $list_suggest,
     );
