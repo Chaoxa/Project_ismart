@@ -19,8 +19,8 @@
     <link href="public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="public/style.css" rel="stylesheet" type="text/css" />
     <link href="public/responsive.css" rel="stylesheet" type="text/css" />
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="gkhFT6ck"></script>
+    <!-- <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="gkhFT6ck"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="public/js/elevatezoom-master/jquery.elevatezoom.js" type="text/javascript"></script>
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
@@ -37,20 +37,20 @@
 
 <body>
     <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div> -->
 
     <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+    <!-- <div id="fb-customer-chat" class="fb-customerchat">
+    </div> -->
 
-    <script>
+    <!-- <script>
         var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "150462905773130");
         chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+    </script> -->
 
     <!-- Your SDK code -->
-    <script>
+    <!-- <script>
         window.fbAsyncInit = function() {
             FB.init({
                 xfbml: true,
@@ -66,7 +66,7 @@
             js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script> -->
     <style>
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
     </style>
@@ -123,7 +123,32 @@
                                 <input type="text" name="s" id="s" placeholder="Bạn muốn tìm gì?" class="img-rouded">
                                 <button type="submit" name="sm-s" id="sm-s">Tìm kiếm</button>
                             </form>
+                            <div id="search-suggestions"></div>
                         </div>
+                        <script>
+                            // Gửi yêu cầu AJAX khi người dùng nhập từ khóa tìm kiếm
+                            $('#s').on('input', function() {
+                                const keyword = $(this).val();
+                                // console.log(keyword);
+                                $.ajax({
+                                    url: '?mod=home&action=suggest',
+                                    method: 'POST',
+                                    data: {
+                                        keyword: keyword
+                                    },
+                                    success: function(response) {
+                                        console.log(response);
+                                        // Hiển thị danh sách sản phẩm phù hợp trong ô tìm kiếm gợi ý
+                                        const suggestions = response.suggestions;
+                                        const html = suggestions.map(suggestion => `<li>${suggestion}</li>`).join('');
+                                        $('#search-suggestions').html(html);
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                        console.error(errorThrown);
+                                    }
+                                });
+                            });
+                        </script>
                         <?php if (isset($_POST['sm-s']) && !empty($_POST['s'])) {
                             // show_array($_POST);
                             $search = $_POST['s'];

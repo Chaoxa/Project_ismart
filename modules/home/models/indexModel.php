@@ -62,3 +62,14 @@ function get_menu_product_by_cat_id($cat_id)
     }
     return $result;
 };
+
+function get_list_products_suggest($keyword)
+{
+    $list_product = db_fetch_array("SELECT * FROM `tbl_product` WHERE `product_name` LIKE '%$keyword%'");
+    $result = array();
+    foreach ($list_product as $item) {
+        $item['url'] = "?mod=product&action=detail_product&id={$item['id']}";
+        $result[] = $item;
+    }
+    return $result;
+}
